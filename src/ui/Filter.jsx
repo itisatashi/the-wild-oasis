@@ -39,7 +39,7 @@ const FilterButton = styled.button`
 
 function Filter({ filterField, options }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const currentFilter = searchParams.get(filterField || options.at(0).value);
+  const currentFilter = searchParams.get(filterField) || options.at(0).value;
 
   // useEffect(() => {
   //   searchParams.set(filterField, "all");
