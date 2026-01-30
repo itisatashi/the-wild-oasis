@@ -111,7 +111,7 @@ function CheckinBooking() {
 
       <ButtonGroup>
         <Button onClick={handleCheckin} disabled={!confirmPaid || isCheckingIn}>
-          Check in booking #{bookingId}
+          Check in
         </Button>
         <Button variation="secondary" onClick={moveBack}>
           Back
