@@ -17,7 +17,7 @@ function SignupForm() {
       { fullName, email, password },
       {
         onSettled: () => reset(),
-      }
+      },
     );
   }
 
@@ -28,7 +28,7 @@ function SignupForm() {
           type="text"
           id="fullName"
           disabled={isLoading}
-          {...register("fullname", {
+          {...register("fullName", {
             required: "This field is required",
           })}
         />
