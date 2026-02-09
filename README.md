@@ -1,16 +1,123 @@
-# React + Vite
+# 🏕️ The Wild Oasis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A hotel management app for employees to manage cabins, bookings, and guests.
 
-Currently, two official plugins are available:
+## What is this app?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**The Wild Oasis** is a dashboard for hotel staff. It helps them:
 
-## React Compiler
+- ✅ See all **cabins** (rooms) and their prices
+- ✅ Manage **bookings** (who is staying when)
+- ✅ **Check guests in and out**
+- ✅ View **dashboard** with charts and stats
+- ✅ Change **settings** (breakfast price, min/max nights, etc.)
+- ✅ Create new **user accounts** for staff
+- ✅ Switch between **dark mode** and light mode
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+| What          | Tool Used                    |
+| ------------- | ---------------------------- |
+| Framework     | React 19                     |
+| Routing       | React Router                 |
+| Styling       | Styled Components            |
+| Data Fetching | React Query (TanStack Query) |
+| Forms         | React Hook Form              |
+| Charts        | Recharts                     |
+| Backend       | Supabase (database + auth)   |
+| Build Tool    | Vite                         |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+```
+src/
+├── features/        # Main features (cabins, bookings, dashboard, etc.)
+├── pages/           # Page components (one per route)
+├── ui/              # Reusable UI components (buttons, tables, etc.)
+├── services/        # API calls to Supabase
+├── hooks/           # Custom React hooks
+├── context/         # React Context (dark mode)
+├── styles/          # Global CSS styles
+└── utils/           # Helper functions
+```
+
+## How to Run
+
+1. **Install packages**
+
+   ```bash
+   npm install
+   ```
+
+2. **Start the app**
+
+   ```bash
+   npm run dev
+   ```
+
+3. **Open in browser**  
+   Go to `http://localhost:5173`
+
+## Other Commands
+
+| Command           | What it does         |
+| ----------------- | -------------------- |
+| `npm run build`   | Build for production |
+| `npm run preview` | Preview built app    |
+| `npm run lint`    | Check code quality   |
+
+## Pages
+
+| Page      | URL          | What it shows                   |
+| --------- | ------------ | ------------------------------- |
+| Dashboard | `/dashboard` | Stats, charts, today's activity |
+| Bookings  | `/bookings`  | List of all bookings            |
+| Cabins    | `/cabins`    | List of all cabins              |
+| Users     | `/users`     | Create new staff accounts       |
+| Settings  | `/settings`  | Hotel settings                  |
+| Account   | `/account`   | Update your own profile         |
+| Login     | `/login`     | Login page                      |
+
+## Features
+
+### 🏠 Cabins
+
+- View all cabins in a table
+- Filter by discount (all, with discount, no discount)
+- Sort by name or price
+- Add, edit, or delete cabins
+
+### 📅 Bookings
+
+- See all guest bookings
+- Filter by status (checked-in, checked-out, unconfirmed)
+- View booking details
+
+### ✅ Check-in / Check-out
+
+- Check guests in when they arrive
+- Add breakfast option during check-in
+- Check guests out when they leave
+
+### 📊 Dashboard
+
+- View stats (bookings, sales, check-ins, occupancy)
+- See today's arrivals and departures
+- View sales chart
+- See stay duration chart
+
+### ⚙️ Settings
+
+- Set breakfast price
+- Set minimum and maximum nights
+- Set maximum guests per booking
+
+### 👤 Authentication
+
+- Login with email and password
+- Protected routes (must login first)
+- Update account details and password
+
+---
+
+Made as part of Jonas Schmedtmann's React course 🎓
